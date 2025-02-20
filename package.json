@@ -1,70 +1,34 @@
 {
-	"name": "preline",
-	"version": "2.7.0",
-	"description": "Preline UI is an open-source set of prebuilt UI components based on the utility-first Tailwind CSS framework.",
-	"main": "index.js",
-	"module": "./src/index.ts",
-	"repository": "https://github.com/htmlstreamofficial/preline.git",
-	"homepage": "https://preline.co",
-	"keywords": [
-		"preline",
-		"html",
-		"css",
-		"javascript",
-		"typescript",
-		"tailwind",
-		"tailwind examples",
-		"tailwind components",
-		"tailwind components library",
-		"tailwind elements",
-		"tailwind library",
-		"tailwind sections",
-		"tailwind css",
-		"tailwind ui",
-		"tailwind css react",
-		"tailwind css next",
-		"tailwind css nextjs",
-		"tailwind css vue",
-		"tailwind css nuxtjs",
-		"tailwind css angular",
-		"tailwind css astro",
-		"tailwind css solidjs",
-		"tailwind css qwik",
-		"tailwind css svelte",
-		"tailwind css remix",
-		"tailwind css laravel"
-	],
-	"author": "Preline Labs Ltd.",
-	"license": "Licensed under MIT and Preline UI Fair Use License",
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"watch": "webpack --config webpack.config.js --watch",
-		"watch:mjs": "webpack --config webpack.config.mjs.js --watch",
-		"build": "webpack --config webpack.config.js",
-		"build:mjs": "webpack --config webpack.config.mjs.js",
-		"pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
-		"generate-dts": "dts-bundle-generator --config dts-config.js"
-	},
-	"devDependencies": {
-		"@types/clipboard": "^2.0.7",
-		"@types/datatables.net": "^1.12.0",
-		"@types/dropzone": "^5.7.8",
-		"@types/jquery": "^3.5.30",
-		"@types/lodash": "^4.17.6",
-		"@types/nouislider": "^15.0.0",
-		"@types/prismjs": "^1.26.4",
-		"@types/vinyl": "^2.0.12",
-		"dts-bundle-generator": "^9.0.0",
-		"prettier": "^3.0.0",
-		"source-map-loader": "^4.0.1",
-		"terser-webpack-plugin": "^5.3.9",
-		"ts-loader": "^9.5.1",
-		"typescript": "^5.5.3",
-		"webpack-cli": "^5.0.1"
-	},
-	"dependencies": {
-		"@popperjs/core": "^2.11.2"
-	}
+  "name": "clean-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__generator": "^7.6.8",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.22.0",
+    "vite": "^6.1.0"
+  }
 }
