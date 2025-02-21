@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import profilePlaceholder from "../../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,14 +47,15 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-      <nav className="mt-6 relative w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-neutral-800 dark:border-neutral-700">
-        <div className="flex items-center justify-between">
+      <nav className="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+        <div className="px-4 md:px-0 gap-2 flex justify-between items-center">
+          <img src={profilePlaceholder} alt="Logo" className="w-10 h-10" />
           <button
             onClick={() => scrollToSection("home")}
             className="flex-none text-xl font-semibold dark:text-white"
             aria-label="Brand"
           >
-            preline
+            bastien
           </button>
           <div className="md:hidden">
             <button
@@ -73,17 +75,14 @@ const Header = () => {
           </div>
         </div>
 
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} overflow-hidden transition-all duration-300 basis-full grow md:block`}>
-          <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:ps-7">
+        <div className="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
-                className={`font-medium ${
-                  activeSection === link.id
-                    ? 'text-blue-600 dark:text-blue-500'
-                    : 'text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500'
-                }`}
+                className={`py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 font-medium focus:outline-none 
+                ${activeSection === link.id ? 'border-gray-800 text-gray-800 dark:border-neutral-200 dark:text-neutral-200' : 'border-transparent text-gray-500 dark:text-neutral-200'}`}
               >
                 {link.name}
               </button>
