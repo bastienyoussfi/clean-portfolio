@@ -1,65 +1,67 @@
-import { motion } from 'framer-motion';
-
 const skillCategories = [
   {
-    title: 'Design Tools',
-    skills: ['Figma', 'Sketch'],
+    title: "Design Tools",
+    skills: ["Figma", "Sketch"],
   },
   {
-    title: 'Development',
-    skills: ['HTML', 'CSS', 'Tailwind CSS', 'React', 'Vue'],
+    title: "Development",
+    skills: ["HTML", "CSS", "Tailwind CSS", "React", "Vue"],
   },
   {
-    title: 'Collaboration',
-    skills: ['Notion', 'Mailchimp', 'Slack'],
+    title: "Collaboration",
+    skills: ["Notion", "Mailchimp", "Slack"],
   },
   {
-    title: 'Design Expertise',
-    skills: ['UI/UX Design', 'Design Systems', 'Custom Illustrations', 'Responsive Design'],
+    title: "Design Expertise",
+    skills: [
+      "UI/UX Design",
+      "Design Systems",
+      "Custom Illustrations",
+      "Responsive Design",
+    ],
   },
   {
-    title: 'Soft Skills',
-    skills: ['Strong communication', 'Problem-solving', 'Attention to detail', 'Time management'],
+    title: "Soft Skills",
+    skills: [
+      "Strong communication",
+      "Problem-solving",
+      "Attention to detail",
+      "Time management",
+    ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold mb-12">Skills</h2>
-          <div className="space-y-8">
-            {skillCategories.map((category) => (
-              <div key={category.title} className="flex flex-col md:flex-row gap-4">
-                <div className="w-full md:w-1/4">
-                  <h3 className="text-secondary dark:text-gray-400">{category.title}</h3>
-                </div>
-                <div className="w-full md:w-3/4">
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-primary dark:text-white"
-                      >
-                        {skill}
-                        {category.skills.indexOf(skill) !== category.skills.length - 1 && ','}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+    <section className="my-10 sm:my-14">
+      <h2 className="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+        Skills
+      </h2>
+      <div className="space-y-3">
+        {skillCategories.map((category) => (
+          <dl key={category.title} className="flex flex-col sm:flex-row gap-1">
+            <dt className="min-w-40">
+              <span className="block text-sm text-gray-500 dark:text-neutral-500">
+                {category.title}:
+              </span>
+            </dt>
+            <dd>
+              <ul>
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </dl>
+        ))}
       </div>
     </section>
   );
 };
 
-export default Skills; 
+export default Skills;

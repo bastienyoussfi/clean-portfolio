@@ -1,59 +1,53 @@
-import { motion } from 'framer-motion';
-
 const testimonials = [
   {
     id: 1,
     text: "I'm absolutely floored by the level of care and attention to detail Eliana has put into this project and for one can guarantee that we will be a return customer.",
-    author: 'Josh Grazioso',
-    avatar: '/avatars/josh.jpg',
+    author: "Josh Grazioso",
+    avatar: "/avatars/josh.jpg",
   },
   {
     id: 2,
-    text: 'To say that hiring Eliana has been life-changing is an understatement. My business has tripled and I got my life back.',
-    author: 'Nicole Grazioso',
-    avatar: '/avatars/nicole.jpg',
+    text: "To say that hiring Eliana has been life-changing is an understatement. My business has tripled and I got my life back.",
+    author: "Nicole Grazioso",
+    avatar: "/avatars/nicole.jpg",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold mb-12">Testimonials</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-dark-card rounded-lg p-6 shadow-lg"
-              >
-                <p className="text-secondary dark:text-gray-400 mb-6">
+    <section className="mt-10 sm:mt-14">
+      <div>
+        <h2 className="mb-3 font-medium text-gray-800 dark:text-neutral-200">
+          Testimonials
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="sm:-ms-4 py-6 sm:px-4">
+              <blockquote>
+                <span className="text-sm text-gray-800 dark:text-neutral-200">
                   {testimonial.text}
-                </p>
-                <div className="flex items-center gap-3">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.author}
-                    className="w-10 h-10 rounded-full"
-                  />
-                  <span className="font-medium">{testimonial.author}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </span>
+                <footer className="mt-3">
+                  <div className="flex items-center gap-x-2">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.author}
+                      className="shrink-0 size-5 rounded-full"
+                    />
+                    <div className="grow">
+                      <div className="text-xs text-gray-500 dark:text-neutral-500">
+                        {testimonial.author}
+                      </div>
+                    </div>
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Testimonials; 
+export default Testimonials;
