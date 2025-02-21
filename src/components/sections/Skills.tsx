@@ -1,35 +1,4 @@
-const skillCategories = [
-  {
-    title: "Design Tools",
-    skills: ["Figma", "Sketch"],
-  },
-  {
-    title: "Development",
-    skills: ["HTML", "CSS", "Tailwind CSS", "React", "Vue"],
-  },
-  {
-    title: "Collaboration",
-    skills: ["Notion", "Mailchimp", "Slack"],
-  },
-  {
-    title: "Design Expertise",
-    skills: [
-      "UI/UX Design",
-      "Design Systems",
-      "Custom Illustrations",
-      "Responsive Design",
-    ],
-  },
-  {
-    title: "Soft Skills",
-    skills: [
-      "Strong communication",
-      "Problem-solving",
-      "Attention to detail",
-      "Time management",
-    ],
-  },
-];
+import skillCategories from "../../assets/skills/skillCategories";
 
 const Skills = () => {
   return (
@@ -49,10 +18,11 @@ const Skills = () => {
               <ul>
                 {category.skills.map((skill) => (
                   <li
-                    key={skill}
+                    key={skill.title}
                     className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200"
                   >
-                    {skill}
+                    {skill.icon}
+                    {skill.title}
                   </li>
                 ))}
               </ul>

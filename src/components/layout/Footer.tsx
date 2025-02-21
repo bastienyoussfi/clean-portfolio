@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between items-center gap-2">
           <div>
             <p className="text-xs text-gray-600 dark:text-neutral-400">
-              © 2025 Preline Labs.
+              © 2025 Bastien Youssfi.
             </p>
           </div>
           <ul className="flex flex-wrap items-center">
@@ -59,6 +59,7 @@ const Footer = () => {
                 type="button"
                 className="hs-dark-mode hs-dark-mode-active:flex hidden relative flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                 data-hs-theme-click-value="light"
+                onClick={() => {}}
               >
                 <span className="sr-only">Light</span>
                 <svg

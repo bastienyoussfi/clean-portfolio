@@ -1,14 +1,14 @@
 const testimonials = [
   {
     id: 1,
-    text: "I'm absolutely floored by the level of care and attention to detail Eliana has put into this project and for one can guarantee that we will be a return customer.",
-    author: "Josh Grazioso",
+    text: "Bastien has been learning fast since his first days at Steamulo, he understands the concepts and improved really fast. He truly is smart and a quick learner.",
+    author: "Steamulo Manager",
     avatar: "/avatars/josh.jpg",
   },
   {
     id: 2,
-    text: "To say that hiring Eliana has been life-changing is an understatement. My business has tripled and I got my life back.",
-    author: "Nicole Grazioso",
+    text: "Bastien is a great developer, he is always willing to help and to learn new things. He is a great team player and a quick learner. Would definitely recommend.",
+    author: "Digital Surf CEO",
     avatar: "/avatars/nicole.jpg",
   },
 ];

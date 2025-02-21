@@ -55,7 +55,7 @@ const Header = () => {
             className="flex-none text-xl font-semibold dark:text-white"
             aria-label="Brand"
           >
-            bastien
+            
           </button>
           <div className="md:hidden">
             <button
