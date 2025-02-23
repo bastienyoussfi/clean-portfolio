@@ -52,11 +52,11 @@ const Hero = () => {
             </svg>
             <a
               className="text-[13px] text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-none focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
-              href="https://twitter.com/elianagarcia997"
+              href="https://twitter.com/bastienyoussfi_"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Twitter
+              X (Twitter)
             </a>
           </li>
           <li className="flex items-center gap-x-2.5">

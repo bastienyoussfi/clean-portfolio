@@ -1,16 +1,14 @@
-import { motion } from 'framer-motion';
-import ArticlesSection from '../components/sections/Articles';
+import ArticlesSection from "../components/sections/Articles";
 
 const Articles = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="min-h-screen">
+      <a className="dark:text-neutral-200" href="/">
+        Back to main page
+      </a>
       <ArticlesSection />
-    </motion.div>
+    </div>
   );
 };
 
-export default Articles; 
+export default Articles;

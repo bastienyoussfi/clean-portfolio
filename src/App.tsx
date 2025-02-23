@@ -1,31 +1,30 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Hero from "./components/sections/Hero";
-import Projects from "./components/sections/Projects";
-import Work from "./components/sections/Work";
-import Articles from "./components/sections/Articles";
-import Skills from "./components/sections/Skills";
-import Testimonials from "./components/sections/Testimonials";
-import Subscribe from "./components/sections/Subscribe";
+import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import Article from "./pages/Article";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
-    <div className="dark:bg-neutral-900">
-      <Header />
-
-      <div className="w-full max-w-2xl mx-auto pt-10 md:pt-16 px-4 sm:px-6 lg:px-8">
-        <main>
-          <Hero />
-          <Projects />
-          <Testimonials />
-          <Skills />
-          <Work />
-          <Articles />
-          <Subscribe />
-        </main>
-        <Footer />
-      </div>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <div className="dark:bg-neutral-900">
+          <Header />
+          <div className="w-full max-w-2xl mx-auto pt-10 md:pt-16 px-4 sm:px-6 lg:px-8">
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/articles" element={<Articles />} />
+                <Route path="/articles/:id" element={<Article />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -1,15 +1,22 @@
-import { motion } from 'framer-motion';
-import Hero from '../components/sections/Hero';
+import Hero from "../components/sections/Hero";
+import Projects from "../components/sections/Projects";
+import Work from "../components/sections/Work";
+import ArticlesSection from "../components/sections/Articles";
+import Skills from "../components/sections/Skills";
+import Testimonials from "../components/sections/Testimonials";
+import Subscribe from "../components/sections/Subscribe";
 
 const Home = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <>
       <Hero />
-    </motion.div>
+      <Projects />
+      <Testimonials />
+      <Skills />
+      <Work />
+      <ArticlesSection />
+      <Subscribe />
+    </>
   );
 };
 
