@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import "./styles/notion.css";
 
 function App() {
   return (

@@ -5,4 +5,5 @@ export interface Article {
   date: string;
   readTime: string;
   link: string;
+  notionUrl?: string; // Optional URL to a Notion page
 }

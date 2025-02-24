@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "framer-motion": "^12.4.7",
+    "@notionhq/client": "^2.2.16",
+    "gsap": "^3.12.7",
+    "notion-client": "^7.1.6",
+    "notion-types": "^7.1.6",
+    "prismjs": "^1.29.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-notion-x": "^7.2.6",
     "react-router-dom": "^7.2.0"
   },
   "devDependencies": {

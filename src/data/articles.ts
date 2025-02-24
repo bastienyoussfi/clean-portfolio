@@ -9,6 +9,7 @@ export const articles: Article[] = [
     date: "2024",
     readTime: "5 min read",
     link: "/articles/complete-guide-to-okrs",
+    notionUrl: "https://www.notion.so/myworkspace/The-complete-guide-to-OKRs-123456789abcdef",
   },
   {
     id: 2,
