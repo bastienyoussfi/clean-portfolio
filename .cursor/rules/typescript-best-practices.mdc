@@ -1,8 +1,0 @@
----
-description: Typescript best practices
-globs: *.ts,*.tsx
----
-- Use strict null checks
-- Prefer interface over type
-- Use type guards and assertions
-- Implement proper type inference

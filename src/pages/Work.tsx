@@ -1,10 +1,15 @@
+import { motion } from 'framer-motion';
 import WorkSection from '../components/sections/Work';
 
 const Work = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <WorkSection />
-    </div>
+    </motion.div>
   );
 };
 

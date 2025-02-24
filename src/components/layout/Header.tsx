@@ -1,11 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import profilePlaceholder from "../../assets/logo.png";
-import { animateHeader } from "../../utils/animations";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +23,6 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const ctx = animateHeader(headerRef);
-    
-    // Clean up animation context on unmount
-    return () => ctx.revert();
   }, []);
 
   const navLinks = [
@@ -55,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <header ref={headerRef} className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+    <header className="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
       <nav className="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
         <div className="px-4 md:px-0 gap-2 flex justify-between items-center">
           <img src={profilePlaceholder} alt="Logo" className="w-10 h-10" />

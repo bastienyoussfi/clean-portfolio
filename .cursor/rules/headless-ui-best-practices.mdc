@@ -1,8 +1,0 @@
----
-description: Headless UI best practices
-globs: *.tsx,*.ts
----
-- Use Headless UI components as building blocks for custom components
-- Implement proper ARIA attributes for accessibility
-- Customize components using the `as` prop for flexibility
-- Leverage the `disabled` prop for managing component states

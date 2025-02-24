@@ -1,8 +1,0 @@
----
-description: React router dom best practices
-globs: *.ts,*.tsx
----
-- Use nested routes for better organization
-- Implement route protection for authenticated routes
-- Use the `useNavigate` hook for programmatic navigation
-- Leverage the `useParams` hook for dynamic routing

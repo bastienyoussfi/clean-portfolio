@@ -1,8 +1,0 @@
----
-description: Vite best practices
-globs: *.ts,*.tsx
----
-- Use ES modules for faster builds
-- Implement code splitting for better performance
-- Utilize Vite plugins for extended functionality
-- Optimize asset handling with Vite's built-in features
