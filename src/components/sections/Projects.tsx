@@ -1,9 +1,11 @@
+import { useRef, useEffect } from 'react';
 import { Project } from "../../types/project";
 import { projects } from "../../data/projects";
+import { animateProjects } from '../../utils/animations';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="group block relative overflow-hidden rounded-lg">
+    <div className="project-card group block relative overflow-hidden rounded-lg">
       <img
         src={project.image}
         alt={project.title}
@@ -34,9 +36,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = animateProjects(sectionRef);
+    
+    // Clean up animation context on unmount
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="mt-10 sm:mt-14">
-      <h2 className="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+    <section id="projects" className="mt-10 sm:mt-14" ref={sectionRef}>
+      <h2 className="projects-title mb-5 font-medium text-gray-800 dark:text-neutral-200">
         Projects
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">

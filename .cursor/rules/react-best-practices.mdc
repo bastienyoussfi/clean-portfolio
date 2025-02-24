@@ -1,0 +1,8 @@
+---
+description: React best practices
+globs: *.tsx,*.ts
+---
+- Use functional components with hooks
+- Implement proper state management with useState or external libraries
+- Utilize memoization with useMemo and useCallback for performance
+- Follow the single responsibility principle for components

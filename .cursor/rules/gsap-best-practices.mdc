@@ -1,0 +1,60 @@
+---
+description: GSAP Coding Guidelines
+globs: *.tsx,*.ts
+---
+- **Use Timelines for Complex Animations:**  
+  - When chaining multiple animations, use `gsap.timeline()` instead of separate `gsap.to()` or `gsap.from()` calls.
+  - Example:
+    ```js
+    const tl = gsap.timeline();
+    tl.to(".box", { x: 100, duration: 1 })
+      .to(".box", { rotation: 360, duration: 1 });
+    ```
+
+- **Always Clean Up Animations in React Components:**  
+  - Store animations in a `useRef` and clean up with `gsap.killTweensOf()` or `context.revert()`.
+  - Example:
+    ```tsx
+    import { useEffect, useRef } from "react";
+    import gsap from "gsap";
+
+    const AnimatedComponent = () => {
+      const boxRef = useRef(null);
+
+      useEffect(() => {
+        const ctx = gsap.context(() => {
+          gsap.to(boxRef.current, { x: 100, duration: 1 });
+        });
+
+        return () => ctx.revert(); // Cleanup on unmount
+      }, []);
+
+      return <div ref={boxRef} className="box">Hello</div>;
+    };
+    ```
+
+- **Avoid Direct DOM Manipulation:**  
+  - Use `useRef` instead of `document.querySelector()`. This improves React compatibility.
+
+- **Prefer `gsap.context()` in React for Scoped Animations:**  
+  - Ensures animations don’t persist between component re-renders.
+
+- **Set Default Easing for Consistency:**  
+  - Define a default ease to maintain a cohesive feel in animations:
+    ```js
+    gsap.defaults({ ease: "power2.out", duration: 0.75 });
+    ```
+
+- **Use GSAP ScrollTrigger for Scroll-Based Animations:**  
+  - Instead of handling scroll manually, use `ScrollTrigger`:
+    ```js
+    gsap.to(".box", {
+      scrollTrigger: ".box",
+      x: 200,
+      duration: 1
+    });
+    ```
+
+- **Optimize Performance:**  
+  - Use `will-change: transform` in CSS for elements that animate frequently.
+  - Avoid animating `width` and `height`—prefer `scale` for better GPU acceleration.

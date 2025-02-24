@@ -1,9 +1,20 @@
+import { useRef, useEffect } from 'react';
 import skillCategories from "../../assets/skills/skillCategories";
+import { animateSkills } from '../../utils/animations';
 
 const Skills = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = animateSkills(sectionRef);
+    
+    // Clean up animation context on unmount
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="my-10 sm:my-14">
-      <h2 className="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+    <section id="skills" className="my-10 sm:my-14" ref={sectionRef}>
+      <h2 className="skills-title mb-5 font-medium text-gray-800 dark:text-neutral-200">
         Skills
       </h2>
       <div className="space-y-3">
@@ -19,7 +30,7 @@ const Skills = () => {
                 {category.skills.map((skill) => (
                   <li
                     key={skill.title}
-                    className="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200"
+                    className="skill-item me-1 after:content-[','] inline-flex items-center text-sm text-gray-800 dark:text-neutral-200"
                   >
                     {skill.icon}
                     {skill.title}

@@ -1,0 +1,67 @@
+/* Animation-related styles */
+
+/* Optimize performance for animated elements */
+.hero-image,
+.hero-title,
+.hero-subtitle,
+.hero-bio p,
+.hero-social-links li,
+.projects-title,
+.project-card,
+.work-title,
+.work-item,
+.skills-title,
+.skill-item {
+  will-change: transform, opacity;
+}
+
+/* Header scroll animation */
+.header-scrolled {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .header-scrolled {
+  background-color: rgba(23, 23, 23, 0.85);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover animations for project cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Work timeline animations */
+.work-item .relative::after {
+  transition: background-color 0.3s ease;
+}
+
+.work-item:hover .relative::after {
+  background-color: #6366f1 !important;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.2s ease;
+}
+
+/* Ensure all animations are disabled for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+} 

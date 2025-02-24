@@ -1,0 +1,8 @@
+---
+description: Tailwind CSS best practices
+globs: *.ts,*.tsx
+---
+- Use utility classes for rapid development
+- Create custom components with `@apply` for reusability
+- Implement responsive design using breakpoints
+- Optimize CSS output with purge configuration

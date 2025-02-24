@@ -1,14 +1,25 @@
+import { useRef, useEffect } from 'react';
 import { workExperiences } from "../../data/work";
+import { animateWork } from '../../utils/animations';
 
 const Work = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = animateWork(sectionRef);
+    
+    // Clean up animation context on unmount
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="work" className="mt-10 sm:mt-14">
-      <h2 className="mb-5 font-medium text-gray-800 dark:text-neutral-200">
+    <section id="work" className="mt-10 sm:mt-14" ref={sectionRef}>
+      <h2 className="work-title mb-5 font-medium text-gray-800 dark:text-neutral-200">
         Work Experience
       </h2>
       <div>
         {workExperiences.map((work) => (
-          <div key={work.id} className="group relative flex gap-x-5">
+          <div key={work.id} className="work-item group relative flex gap-x-5">
             <div className="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700">
               <div className="relative z-10 size-6 flex justify-center items-center">
                 {work.logo}
