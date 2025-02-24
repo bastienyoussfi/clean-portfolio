@@ -3,13 +3,13 @@ const testimonials = [
     id: 1,
     text: "Bastien has been learning fast since his first days at Steamulo, he understands the concepts and improved really fast. He truly is smart and a quick learner.",
     author: "Steamulo Manager",
-    avatar: "/avatars/josh.jpg",
+    avatar: "src/assets/steamulo_logo.png",
   },
   {
     id: 2,
     text: "Bastien is a great developer, he is always willing to help and to learn new things. He is a great team player and a quick learner. Would definitely recommend.",
     author: "Digital Surf CEO",
-    avatar: "/avatars/nicole.jpg",
+    avatar: "src/assets/digital_surf_logo.webp",
   },
 ];
 
